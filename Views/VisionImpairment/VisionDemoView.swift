@@ -84,10 +84,8 @@ struct ReadingTextDemo: View {
         
         Task {
             let filtered = await Task.detached(priority: .userInitiated) {
-                // Image generation runs off main thread; filter is applied on main actor below
                 return sampleImage
             }.value
-            // Apply @MainActor-isolated filter on main actor
             filteredImage = VisionImpairmentFilter.shared.applyFilter(
                 to: filtered,
                 type: capturedType,

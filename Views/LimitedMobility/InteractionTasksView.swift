@@ -347,7 +347,7 @@ struct PreciseTapTask: View {
     }
 }
 
-// MARK: - Shake modifier (uses TimelineView - no Timer concurrency issues)
+// MARK: - Shake modifier
 private struct ShakeModifier: ViewModifier {
     let amount: CGFloat
     let isActive: Bool

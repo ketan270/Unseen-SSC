@@ -194,7 +194,7 @@ struct VisionImpairmentView: View {
     }
 }
 
-// MARK: - Vision Type Chip (matching ColorBlindness TypeChip design)
+// MARK: - Vision Type Chip
 struct VisionTypeChip: View {
     let type: VisionImpairmentType
     let isSelected: Bool

@@ -1,16 +1,12 @@
 # Unseen
 
-### Step into worlds you've never experienced
+**Swift Student Challenge 2026**
 
-**Swift Student Challenge 2026 Submission**
-
-Unseen is an educational iOS app that builds **empathy and understanding** by simulating how people with different disabilities experience digital interfaces and the world around them. Through 4 interactive experiences, users discover why accessible design matters.
+Step into worlds you've never experienced. Unseen lets you simulate color blindness, vision impairment, hearing loss, and limited mobility — so you can understand why accessible design matters.
 
 ---
 
-## About the App
-
-Unseen offers **4 interactive experiences** that let you step into the perspectives of millions of people worldwide:
+## The 4 Experiences
 
 | Experience | What You'll Experience |
 |------------|------------------------|
@@ -30,9 +26,9 @@ Unseen offers **4 interactive experiences** that let you step into the perspecti
 
 ---
 
-## Data Sources & Citations
+## Data Sources
 
-All statistics and scientific references used in Unseen are from peer-reviewed research and official health organizations.
+Stats and simulation methods used in the app:
 
 ### Color Blindness
 
@@ -44,7 +40,7 @@ All statistics and scientific references used in Unseen are from peer-reviewed r
 | Tritanopia | ~1 in 15,000 (affects both sexes equally) | [Vision Center](https://www.visioncenter.org/conditions/tritanopia/), [Britannica](https://www.britannica.com/science/tritanopia) |
 | Achromatopsia | ~1 in 30,000 people | [MedlinePlus](https://medlineplus.gov/genetics/condition/achromatopsia/), [NIH Rare Diseases](https://www.rarediseases.info.nih.gov/diseases/15015/achromatopsia) |
 
-**Simulation:** Simplified simulation using SwiftUI `saturation` and `colorMultiply` modifiers for educational purposes. The app references *Brettel, Viénot & Mollon (1997)* — the gold standard for dichromat simulation — in the model; [paper](https://opg.optica.org/josaa/abstract.cfm?uri=josaa-14-10-2647).
+**Simulation:** SwiftUI `saturation` and `colorMultiply`. Model includes Brettel/Viénot/Mollon (1997) matrices; [paper](https://opg.optica.org/josaa/abstract.cfm?uri=josaa-14-10-2647).
 
 ---
 
@@ -69,9 +65,7 @@ All statistics and scientific references used in Unseen are from peer-reviewed r
 | Global prevalence | 1.57 billion (1 in 5 people) | [WHO Fact Sheet](https://www.who.int/news-room/fact-sheets/deafness-and-hearing-loss), [Lancet GBD 2019](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(21)00516-X/fulltext) |
 | Moderate or worse | 403 million (after hearing aid adjustment) | Global Burden of Disease Study 2019 |
 
-**Simulation science:** Sensorineural hearing loss typically affects high frequencies first (base of cochlea). The app uses an exponential low-pass filter: `cutoff = 20000 × 0.04^level` Hz, matching the characteristic audiogram pattern. [NCBI: Sensorineural Hearing Loss](https://www.ncbi.nlm.nih.gov/books/NBK565860/)
-
-**Speech formants:** F0–F5 formant structure (200–6500 Hz) models how consonants disappear before vowels as hearing loss increases — based on standard audiological formant research.
+**Simulation:** Low-pass filter (`cutoff = 20000 × 0.04^level` Hz) — high frequencies drop first, like real sensorineural loss. [NCBI](https://www.ncbi.nlm.nih.gov/books/NBK565860/)
 
 ---
 
@@ -86,30 +80,10 @@ All statistics and scientific references used in Unseen are from peer-reviewed r
 
 ---
 
-## Design Principles
-
-All design tips in the app align with:
-
-- **Apple Human Interface Guidelines** — Accessibility, Layout, and Interaction
-- **WCAG 2.1** — Web Content Accessibility Guidelines
-- **WHO World Report on Hearing** — Recommendations for accessible design
-
----
-
 ## Requirements
 
-- iOS 16.0+
-- Xcode 15+ (Swift 6)
-- Swift Package or Xcode project
+iOS 16.0+ · Xcode 15+ · Swift 6
 
 ---
 
-## Author
-
-**Ketan Sharma** — Swift Student Challenge 2026
-
----
-
-## License
-
-This project was created for the Apple Swift Student Challenge. All statistics and scientific references are cited above. Simulation algorithms are based on published research.
+Ketan Sharma — SSC 2026
