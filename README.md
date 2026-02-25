@@ -2,7 +2,7 @@
 
 ### Step into worlds you've never experienced
 
-**Swift Student Challenge 2025 Submission**
+**Swift Student Challenge 2026 Submission**
 
 Unseen is an educational iOS app that builds **empathy and understanding** by simulating how people with different disabilities experience digital interfaces and the world around them. Through 4 interactive experiences, users discover why accessible design matters.
 
@@ -23,10 +23,10 @@ Unseen offers **4 interactive experiences** that let you step into the perspecti
 
 ## Technical Implementation
 
-- **SwiftUI** — Native iOS UI with `NavigationStack`, `Toolbar`, and system components
-- **AVFoundation** — Real-time audio processing with low-pass filtering for hearing loss simulation
-- **Core Image** — Vision impairment filters (Gaussian blur, motion blur for astigmatism)
-- **Accessibility** — VoiceOver support, Dynamic Type, and Apple HIG–aligned design
+- **SwiftUI** — Native iOS UI with `NavigationStack`, `Toolbar`, `NavigationLink`, and system components
+- **AVFoundation** — `AVAudioEngine`, `AVAudioPlayerNode`, `AVSpeechSynthesizer`; real-time low-pass filtering for hearing loss simulation
+- **Core Image** — `CIFilter.gaussianBlur`, `CIFilter.motionBlur`, `CIFilter.colorControls` for vision impairment (myopia, hyperopia, astigmatism, presbyopia)
+- **Accessibility** — `accessibilityLabel` and `accessibilityValue` on sliders and interactive elements (VoiceOver-ready); Apple HIG–aligned design
 
 ---
 
@@ -44,7 +44,7 @@ All statistics and scientific references used in Unseen are from peer-reviewed r
 | Tritanopia | ~1 in 15,000 (affects both sexes equally) | [Vision Center](https://www.visioncenter.org/conditions/tritanopia/), [Britannica](https://www.britannica.com/science/tritanopia) |
 | Achromatopsia | ~1 in 30,000 people | [MedlinePlus](https://medlineplus.gov/genetics/condition/achromatopsia/), [NIH Rare Diseases](https://www.rarediseases.info.nih.gov/diseases/15015/achromatopsia) |
 
-**Simulation algorithm:** Color transformation matrices based on *Brettel, Viénot & Mollon (1997)* — "Computerized simulation of color appearance for dichromats," *Journal of the Optical Society of America A*, Vol. 14, No. 10. [Paper](https://opg.optica.org/josaa/abstract.cfm?uri=josaa-14-10-2647)
+**Simulation:** Simplified simulation using SwiftUI `saturation` and `colorMultiply` modifiers for educational purposes. The app references *Brettel, Viénot & Mollon (1997)* — the gold standard for dichromat simulation — in the model; [paper](https://opg.optica.org/josaa/abstract.cfm?uri=josaa-14-10-2647).
 
 ---
 
@@ -71,7 +71,7 @@ All statistics and scientific references used in Unseen are from peer-reviewed r
 
 **Simulation science:** Sensorineural hearing loss typically affects high frequencies first (base of cochlea). The app uses an exponential low-pass filter: `cutoff = 20000 × 0.04^level` Hz, matching the characteristic audiogram pattern. [NCBI: Sensorineural Hearing Loss](https://www.ncbi.nlm.nih.gov/books/NBK565860/)
 
-**Speech formants:** F0–F5 formant structure (200–6500 Hz) models how consonants disappear before vowels as hearing loss increases. [Audiological research on formant perception]
+**Speech formants:** F0–F5 formant structure (200–6500 Hz) models how consonants disappear before vowels as hearing loss increases — based on standard audiological formant research.
 
 ---
 
@@ -106,7 +106,7 @@ All design tips in the app align with:
 
 ## Author
 
-**Ketan Sharma** — Swift Student Challenge 2025
+**Ketan Sharma** — Swift Student Challenge 2026
 
 ---
 
